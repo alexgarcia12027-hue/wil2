@@ -1,0 +1,219 @@
+.lottie-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon-wrapper {
+  font-size: 2em;
+  color: #667eea;
+  transition: all 0.3s ease;
+}
+
+/* Loading Animation */
+.lottie-animation.loading .default-animation {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lottie-animation.loading .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #667eea;
+  animation: loadingDots 1.4s infinite ease-in-out;
+}
+
+.lottie-animation.loading .dot:nth-child(1) { animation-delay: -0.32s; }
+.lottie-animation.loading .dot:nth-child(2) { animation-delay: -0.16s; }
+.lottie-animation.loading .dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes loadingDots {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Success Animation */
+.lottie-animation.success.playing .icon-wrapper {
+  color: #4CAF50;
+  animation: successPop 0.6s ease-out;
+}
+
+@keyframes successPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Error Animation */
+.lottie-animation.error.playing .icon-wrapper {
+  color: #f44336;
+  animation: errorShake 0.6s ease-out;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Warning Animation */
+.lottie-animation.warning.playing .icon-wrapper {
+  color: #ff9800;
+  animation: warningBounce 0.8s ease-out;
+}
+
+@keyframes warningBounce {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-10px); }
+  50% { transform: translateY(-5px); }
+  75% { transform: translateY(-7px); }
+}
+
+/* Info Animation */
+.lottie-animation.info.playing .icon-wrapper {
+  color: #2196F3;
+  animation: infoGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes infoGlow {
+  0% {
+    text-shadow: 0 0 5px #2196F3;
+    opacity: 0.8;
+  }
+  100% {
+    text-shadow: 0 0 15px #2196F3, 0 0 25px #2196F3;
+    opacity: 1;
+  }
+}
+
+/* Heart Animation */
+.lottie-animation.heart.playing .icon-wrapper {
+  color: #e91e63;
+  animation: heartBeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+/* Star Animation */
+.lottie-animation.star.playing .icon-wrapper {
+  color: #ffc107;
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.2) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(0.8) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.1) rotate(270deg);
+    opacity: 0.9;
+  }
+}
+
+/* Arrow Animation */
+.lottie-animation.arrow.playing .icon-wrapper {
+  color: #667eea;
+  animation: arrowSlide 1s ease-in-out infinite;
+}
+
+@keyframes arrowSlide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+/* Pulse Animation (default) */
+.lottie-animation.pulse.playing .icon-wrapper,
+.lottie-animation.pulse.playing .default-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Hover effects */
+.lottie-animation:hover .icon-wrapper {
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .lottie-animation {
+    transform: scale(0.8);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .lottie-animation *,
+  .lottie-animation::before,
+  .lottie-animation::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

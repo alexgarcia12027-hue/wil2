@@ -1,0 +1,25 @@
+{
+  "name": "abogado-wilson-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for Abogado Wilson Legal Services",
+  "main": "mcp-server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node mcp-server.js",
+    "dev": "nodemon mcp-server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "mcp",
+    "legal",
+    "server",
+    "professional"
+  ],
+  "author": "Abogado Wilson Ipiales",
+  "license": "MIT"
+}
